@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Winner</title>
+    <link rel="stylesheet" type="text/css" href="/static/index.css"/>
+</head>
+<body>
+    <h1><a href="/">Winner!</a></h1>
+    <main>
+    {% for row in range(0, 3) %}
+        {% for col in range(0, 3) %}
+            <div class="board">
+            {% for y in range(0, 3) %}
+                {% for x in range(0, 3) %}
+                    <a href="/{{col}}/{{row}}/{{x}}/{{y}}"><div class="item">{{conv(state[col][row][x][y])}}</div></a>
+                {% endfor %}
+            {% endfor %}
+            </div>
+        {% endfor %}
+    {% endfor %}
+    </main>
+
+
+</body>
+</html>
